@@ -1,0 +1,31 @@
+#result {
+    width: 520px;
+    line-height: 3;
+}
+.title {
+    width: 70px;
+    margin-left: 10px;
+}
+
+.description {
+    float: left;
+    width: 300px;
+    margin-left: 10px;
+}
+
+.rating {
+    float: left;
+    width: 30px;
+    margin-left: 20px;
+}
+
+.editButton {
+    float: left;
+    width: 40px;
+    margin-left: 10px;
+}
+
+.deleteButton {
+    float: left;
+    width: 40px;
+}

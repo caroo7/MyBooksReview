@@ -6,19 +6,19 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@RestController(value = "/reviews")
+@RestController
 @Transactional
 public class BookReviewController {
 
     @Autowired
     BookReviewRepository repository;
 
-    @GetMapping()
+    @GetMapping(value = "/reviews")
     public List<BookReview> getBookReviews() {
         return repository.findAll();
     }
 
-    @PostMapping()
+    @PostMapping(value = "/reviews")
     public String addReview(@RequestBody BookReview bookReview) {
         BookReview retrievedBook = repository.save(bookReview);
         if (retrievedBook == null) {
@@ -27,7 +27,7 @@ public class BookReviewController {
         return "Book with title: " + retrievedBook.getTitle() + " was successfully saved";
     }
 
-    @PutMapping
+    @PutMapping(value = "/reviews")
     public String updateReview(@RequestBody BookReview bookReview) {
         BookReview retrievedBook = repository.findByTitle(bookReview.getTitle());
         if(retrievedBook == null) {
