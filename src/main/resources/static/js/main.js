@@ -13,7 +13,7 @@ $(document).ready(function () {
           contentType: "application/json; charset=utf-8",
           dataType: "json",
           success: function(){
-            alert("Data saved");
+            alert("Review saved");
           }
         });
 
@@ -52,7 +52,7 @@ function editFunction(index) {
             contentType: "application/json; charset=utf-8",
             dataType: "json",
             success: function(){
-              console.log("Data updated");
+              console.log("Review updated");
             }
          });
 
@@ -63,7 +63,7 @@ function deleteFunction(index) {
              url: "reviews/" + $("#title" + index).text(),
              type: "DELETE",
              success: function(){
-                 console.log("Data updated");
+                 console.log("Review deleted");
              }
          });
 }
