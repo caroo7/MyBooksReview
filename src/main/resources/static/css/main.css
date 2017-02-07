@@ -29,3 +29,31 @@
     float: left;
     width: 40px;
 }
+
+#add {
+    padding-top: 200px;
+    width: 500px;
+}
+
+.addLabel {
+    width: 80px;
+}
+
+#formTitle {
+    float:left;
+    width: 200px;
+}
+
+#formDescription {
+    float:left;
+    width: 200px;
+}
+
+#formRatings {
+    float:left;
+    width: 50px;
+}
+
+#submitDiv {
+    width: 50px;
+}

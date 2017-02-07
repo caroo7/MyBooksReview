@@ -24,7 +24,9 @@ targetCompatibility = 1.8
 
 dependencies {
     compile("org.springframework.boot:spring-boot-starter-web")
+    compile("org.springframework.boot:spring-boot-starter-test")
     compile("org.springframework.boot:spring-boot-starter-data-mongodb")
+    compile group: 'de.flapdoodle.embed', name: 'de.flapdoodle.embed.mongo', version: '1.50.5'
     compile group: 'org.springframework.boot', name: 'spring-boot-starter-thymeleaf', version: '1.5.1.RELEASE'
     compile group: 'org.springframework.boot', name: 'spring-boot-devtools', version: '1.5.1.RELEASE'
 

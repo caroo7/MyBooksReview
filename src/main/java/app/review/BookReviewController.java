@@ -39,7 +39,7 @@ public class BookReviewController {
         return "Book with title: " + retrievedBook.getTitle() + " was updated";
     }
 
-    /*@DeleteMapping("/{title}")
+    @DeleteMapping(value = "/reviews/{title}")
     public String deleteReview(@PathVariable("title") String title) {
         BookReview reviewToDelete = repository.findByTitle(title);
         if (reviewToDelete == null) {
@@ -47,6 +47,6 @@ public class BookReviewController {
         }
         repository.delete(reviewToDelete);
         return "Book with title: " + reviewToDelete.getTitle() + " was successfully deleted";
-    }*/
+    }
 
 }
