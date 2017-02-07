@@ -8,7 +8,9 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.context.WebApplicationContext;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 
@@ -33,15 +35,18 @@ public class BookReviewControllerTest extends AbstractTestNGSpringContextTests {
         this.mockMvc = MockMvcBuilders.webAppContextSetup(this.ctx).build();
     }
 
+    @AfterMethod
+    public void preparation() throws Exception {
+        controller.repository.deleteAll();
+    }
+
     @Test
-    @Transactional
     public void getReviewTest() throws Exception {
         mockMvc.perform(get("/reviews").contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk());
     }
 
     @Test
-    @Transactional
     public void addReviewTest() throws Exception {
         BookReview bookReview = new BookReview("testTitle", "testDescription", 30);
 
@@ -52,7 +57,6 @@ public class BookReviewControllerTest extends AbstractTestNGSpringContextTests {
     }
 
     @Test
-    @Transactional
     public void updateReviewTest() throws Exception {
         BookReview bookReview = new BookReview("testTitle", "testDescription", 30);
         controller.repository.save(bookReview);
@@ -66,7 +70,6 @@ public class BookReviewControllerTest extends AbstractTestNGSpringContextTests {
     }
 
     @Test
-    @Transactional
     public void deleteReviewTest() throws Exception {
         BookReview bookReview = new BookReview("testTitle", "testDescription", 30);
         controller.repository.save(bookReview);
